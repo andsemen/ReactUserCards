@@ -6,12 +6,14 @@ import data from "./components/UserCard/data"
 
 
 function App() {
+
+  const generate = data.map (user => {
+   return <UserCard key ={user.id} user ={user}   />
+  })
   return (
-   <React.Fragment>
-     <UserCard 
-     user = {data}
-/>
-   </React.Fragment>
+   <div>
+     {generate}
+   </div>
   );
 }
 
