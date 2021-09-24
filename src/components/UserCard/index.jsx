@@ -1,21 +1,23 @@
 import React from "react";
-import "./userStyles.css";
-import Image from "../Image";
+import UserCardDescription from "../UserCardDescription";
+import UserImage from "../UserImage";
+import styles from './UserCard.module.scss'
 
 class UserCard extends React.Component {
   render() {
+   
+
     const { user } = this.props;
 
     const { firstName, lastName, profilePicture, discription } = user;
 
+    const userName = `${firstName} ${lastName}`.trim() || "Unknown User";
+
     return (
       
-        <div className="cardWrapp">
-          <Image src={profilePicture} alt={firstName} />
-          <h2 className="userName">
-            {firstName} {lastName}
-          </h2>
-          <p className="userInfo">{discription}</p>
+        <div className={styles.cardWrapp}>
+          <UserImage src={profilePicture} alt={userName} />
+          <UserCardDescription userName ={userName} userDiscription ={discription} />
         </div>
       
     );

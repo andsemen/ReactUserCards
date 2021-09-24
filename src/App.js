@@ -7,13 +7,13 @@ import data from "./components/UserCard/data"
 
 function App() {
 
-  const generate = data.map (user => {
+  const generateUserCards = data.map (user => {
    return <UserCard key ={user.id} user ={user}   />
   })
   return (
-   <div>
-     {generate}
-   </div>
+   <>
+     {generateUserCards}
+   </>
   );
 }
 
